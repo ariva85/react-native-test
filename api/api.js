@@ -21,7 +21,6 @@ const callFetch = async (apiUrl, options = {}) => {
 const api = {};
 
 api.getList = async () => {
-  const parameters = {};
   return callFetch('5bcb2e832f0000610075be9b');
 };
 

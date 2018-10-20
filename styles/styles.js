@@ -59,7 +59,9 @@ const styles = EStyleSheet.create({
     color: '$textColor',
     fontSize: 30,
     textAlign: 'left',
-    marginBottom: 10
+    marginBottom: 10,
+    borderBottomWidth: 1,
+    borderColor: '$lightGrey'
   },
   detailsDescription: {
     color: '$textColor',
@@ -72,9 +74,10 @@ const styles = EStyleSheet.create({
     color: '$textColor',
     fontSize: 30,
     textAlign: 'right',
-    borderWidth: 3,
-    borderColor: '$textColor',
-    paddingRight: 5
+    borderWidth: 2,
+    borderColor: '$lightGrey',
+    paddingRight: 5,
+    backgroundColor: '#fff'
   },
   addBtn: {
     width: '100%',

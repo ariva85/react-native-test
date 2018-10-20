@@ -31,11 +31,7 @@ class Cart extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.items ? this.buildCart() : <Text>empty cart</Text>}
-        <Button
-          title="Go back"
-          onPress={() => this.props.navigation.goBack()}
-        />
+        {this.state.items ? this.buildCart() : <Text>Empty cart!</Text>}
       </View>
     );
   }
