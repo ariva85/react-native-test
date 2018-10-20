@@ -10,7 +10,7 @@ class Modal extends React.Component {
     return (
       <View style={styles.modalContainer}>
         <View style={styles.modalTextWrapper}>
-          <Text style={styles.modalText}>{params.name} added to your </Text>
+          <Text style={styles.modalText}>{params.name} added to your</Text>
           <CartButton size={50} />
         </View>
         <Button

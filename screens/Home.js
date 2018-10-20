@@ -24,11 +24,10 @@ const mock = {
 class Home extends PureComponent {
   static navigationOptions = {
     title: 'Home',
-    /* headerTitle: <Title />, */
     headerRight: <CartButton />
   };
 
-  state = { products: null };
+  state = { products: null, isLoading: true };
 
   async componentDidMount() {
     /*  Animated.timing(
@@ -43,7 +42,7 @@ class Home extends PureComponent {
 
     const apiResult = await api.getList();
     //setTimeout(() => {
-    this.setState({ products: apiResult.list });
+    this.setState({ products: apiResult.list, isLoading: true });
     //}, 2000);
   }
 
@@ -56,10 +55,10 @@ class Home extends PureComponent {
 
   render() {
     const { navigation } = this.props;
-    const { products } = this.state;
-    let viewList = null;
+    const { products, isLoading } = this.state;
+    let content = null;
     if (products && products.length) {
-      viewList = (
+      content = (
         <FlatList
           style={styles.listContainer}
           data={products}
@@ -69,9 +68,12 @@ class Home extends PureComponent {
           )}
         />
       );
+    } else {
+      //basic error handling
+      content = <Text>Error loading data...</Text>;
     }
     return (
-      <View style={styles.container}>{products ? viewList : <Loader />}</View>
+      <View style={styles.container}>{isLoading ? content : <Loader />}</View>
     );
   }
 }

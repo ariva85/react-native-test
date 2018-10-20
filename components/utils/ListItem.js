@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, Text, TouchableHighlight, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableHighlight } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -9,13 +9,11 @@ class ListItem extends PureComponent {
   render() {
     const { item, onItemPress } = this.props;
     return (
-      <TouchableHighlight
-        onPress={() => onItemPress(item)}
-        activeOpacity={0.8}
-        color={'green'}
-      >
+      <TouchableHighlight onPress={() => onItemPress(item)}>
         <View style={styles.listItem}>
-          <Text style={styles.listItemText}>{item.name}</Text>
+          <Text style={styles.listItemText}>
+            {item.name} - {item.price} €
+          </Text>
           <FontAwesome
             name="caret-right"
             size={24}

@@ -4,7 +4,7 @@ const callFetch = async (apiUrl, options = {}) => {
   try {
     const effectiveOptions = {
       headers: {
-        //'content-type': 'application/json'
+        'content-type': 'application/json'
       },
       ...options
     };

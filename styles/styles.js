@@ -101,6 +101,47 @@ const styles = EStyleSheet.create({
     fontSize: 30,
     textAlign: 'center',
     marginBottom: 10
+  },
+  cartListIconContainer: {
+    /* borderWidth: 1,
+    borderColor: '#000', */
+    flex: 0.4,
+    flexDirection: 'row'
+  },
+  cartListItem: {
+    flex: 1,
+    flexDirection: 'row',
+    height: 60,
+    backgroundColor: '$secondaryColor',
+    padding: 0,
+    alignItems: 'center',
+    borderBottomColor: '$lightGrey',
+    borderBottomWidth: 1,
+    paddingLeft: 5,
+    borderBottomWidth: 1,
+    borderColor: '#000',
+    margin: 3
+  },
+  cartListIconWrapper: {
+    /* padding: 5, */
+    marginRight: 5,
+    height: 40,
+    /*  borderWidth: 1,
+    borderColor: '#000', */
+    width: '50%',
+    alignContent: 'center'
+  },
+  cartListItemText: {
+    flex: 0.6,
+    /* borderWidth: 1,
+    borderColor: '#000', */
+    fontSize: 20
+  },
+
+  cartListIcon: {
+    flex: 1,
+    alignSelf: 'center',
+    paddingTop: 10
   }
 });
 

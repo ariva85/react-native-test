@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Animated } from 'react-native';
 
-// This function takes a component...
+//not working
 export function withFade(WrappedComponent) {
-  // ...and returns another component...
   return class extends React.Component {
     state = { fadeAnim: new Animated.Value(0) };
 
