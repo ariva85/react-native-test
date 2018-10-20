@@ -3,6 +3,8 @@ import Details from '../screens/Details';
 import Cart from '../screens/Cart';
 import Modal from '../screens/Modal';
 import { createStackNavigator } from 'react-navigation';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import styles from '../styles/styles';
 
 const MainStack = createStackNavigator(
   {
@@ -21,9 +23,9 @@ const MainStack = createStackNavigator(
     /* The header config from HomeScreen is now here */
     navigationOptions: {
       headerStyle: {
-        backgroundColor: '#f4511e'
+        backgroundColor: () => EStyleSheet.value('$primaryColor')
       },
-      headerTintColor: '#fff',
+      headerTintColor: () => EStyleSheet.value('$secondaryColor'),
       headerTitleStyle: {
         fontWeight: 'bold'
       }

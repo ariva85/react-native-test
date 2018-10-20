@@ -1,0 +1,9 @@
+import React, { PureComponent } from 'react';
+import { View, ActivityIndicator } from 'react-native';
+import styles from '../../styles/styles';
+
+export const Loader = () => (
+  <View style={styles.loaderWrapper}>
+    <ActivityIndicator size="large" color="#0000ff" />
+  </View>
+);
