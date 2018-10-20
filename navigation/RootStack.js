@@ -23,9 +23,9 @@ const MainStack = createStackNavigator(
     /* The header config from HomeScreen is now here */
     navigationOptions: {
       headerStyle: {
-        backgroundColor: () => EStyleSheet.value('$primaryColor')
+        backgroundColor: '#ac3861' //() => EStyleSheet.value('$primaryColor')
       },
-      headerTintColor: () => EStyleSheet.value('$secondaryColor'),
+      headerTintColor: '#edc7b7', //() => EStyleSheet.value('$secondaryColor'),
       headerTitleStyle: {
         fontWeight: 'bold'
       }

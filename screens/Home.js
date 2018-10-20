@@ -42,9 +42,9 @@ class Home extends PureComponent {
     //this.props.navigation.setParams({ goToCart: this.goToCart });
 
     const apiResult = await api.getList();
-    setTimeout(() => {
-      this.setState({ products: apiResult.list });
-    }, 2000);
+    //setTimeout(() => {
+    this.setState({ products: apiResult.list });
+    //}, 2000);
   }
 
   handleItemPress = item => {
@@ -71,10 +71,7 @@ class Home extends PureComponent {
       );
     }
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Home </Text>
-        {products ? viewList : <Loader />}
-      </View>
+      <View style={styles.container}>{products ? viewList : <Loader />}</View>
     );
   }
 }

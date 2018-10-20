@@ -11,11 +11,10 @@ const styles = EStyleSheet.create({
   },
   container: {
     width: '100%',
-    alignItems: 'center',
-    backgroundColor: 'pink',
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    backgroundColor: '$secondaryColor'
   },
   listContainer: {
     width: '100%'
@@ -24,7 +23,7 @@ const styles = EStyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     height: 60,
-    backgroundColor: '#fff',
+    backgroundColor: '$secondaryColor',
     padding: 0,
     alignItems: 'center',
     borderBottomColor: '$lightGrey',
@@ -52,26 +51,56 @@ const styles = EStyleSheet.create({
   },
   detailsWrapper: {
     width: '100%',
-    borderWidth: 1,
-    borderColor: '#000',
     paddingVertical: 10,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
+    backgroundColor: '$secondaryColor'
   },
   detailsTitle: {
     color: '$textColor',
     fontSize: 30,
-    textAlign: 'left'
+    textAlign: 'left',
+    marginBottom: 10
   },
   detailsDescription: {
     color: '$textColor',
-    fontSize: 20,
+    fontSize: 18,
     minHeight: 100,
-    marginBottom: 10
+    marginBottom: 20,
+    paddingLeft: 20
   },
   detailsPrice: {
     color: '$textColor',
     fontSize: 30,
-    textAlign: 'right'
+    textAlign: 'right',
+    borderWidth: 3,
+    borderColor: '$textColor',
+    paddingRight: 5
+  },
+  addBtn: {
+    width: '100%',
+    color: '$primaryColor',
+    backgroundColor: '$secondaryColor',
+    fontSize: 30
+  },
+  modalContainer: {
+    width: '100%',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: '$secondaryColor',
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#000'
+  },
+  modalTextWrapper: {
+    alignItems: 'center',
+    marginBottom: 30
+  },
+  modalText: {
+    color: '$textColor',
+    fontSize: 30,
+    textAlign: 'center',
+    marginBottom: 10
   }
 });
 
