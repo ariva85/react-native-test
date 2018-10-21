@@ -14,10 +14,9 @@ class Cart extends PureComponent {
   };
   state = {};
 
-  keyExtractor = item => 'ci-' + item.id;
+  keyExtractor = item => `ci-${item.id}`;
 
   handleDelete = index => {
-    debugger;
     this.props.dispatch(removeProduct(index));
   };
 
@@ -41,7 +40,6 @@ class Cart extends PureComponent {
 
   render() {
     const { list } = this.props;
-    debugger;
     return (
       <View style={styles.container}>
         {list.length ? (

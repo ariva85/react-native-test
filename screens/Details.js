@@ -5,6 +5,7 @@ import styles from '../styles/styles';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { addProduct } from '../redux/actions/CartActions';
 import { connect } from 'react-redux';
+import routes from '../config/routes';
 
 class Details extends PureComponent {
   static navigationOptions = {
@@ -18,7 +19,7 @@ class Details extends PureComponent {
     const { navigation, dispatch } = this.props;
     const { params } = navigation.state;
     dispatch(addProduct(params));
-    navigation.navigate('Modal', params);
+    navigation.navigate(routes.modal, params);
   };
 
   render() {
@@ -31,7 +32,7 @@ class Details extends PureComponent {
           style={{ width: '100%', height: 200 }}
           source={fallbackImg || { uri: params.uri }}
           onError={() =>
-            this.setState({ fallbackImg: require('../assets/splash.png') })
+            this.setState({ fallbackImg: require('../assets/fallbackImg.jpg') })
           }
         />
         <Text style={styles.detailsTitle}>
@@ -42,7 +43,6 @@ class Details extends PureComponent {
         </ScrollView>
         <View style={styles.priceWrapper}>
           <Text style={styles.detailsPrice}>{`Price : ${params.price} €`}</Text>
-          {/* TODO create custom button */}
           <Button
             onPress={this.handleAddBtnPress}
             title="Add to cart"

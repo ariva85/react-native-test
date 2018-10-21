@@ -1,26 +1,12 @@
 import React, { PureComponent } from 'react';
-import {
-  Button,
-  View,
-  Text,
-  FlatList,
-  ActivityIndicator,
-  Animated
-} from 'react-native';
-import ListItem from '../components/utils/ListItem';
-import api from '../api/api';
-import routes from '../config/routes';
-import styles from '../styles/styles';
+import { View, Text, FlatList } from 'react-native';
+import { connect } from 'react-redux';
+import { fetchProducts } from '../redux/actions/HomeActions';
 import { Loader } from '../components/utils/Loader';
 import NavigationIcon from '../components/utils/NavigationIcon';
-
-import { fetchProducts } from '../redux/actions/HomeActions';
-import { connect } from 'react-redux';
-const mock = {
-  name: 'adsas dads',
-  details: ' qweq weqw eqw ewqe wqe wqe ',
-  price: '3$'
-};
+import ListItem from '../components/utils/ListItem';
+import styles from '../styles/styles';
+import routes from '../config/routes';
 
 class Home extends PureComponent {
   static navigationOptions = {
@@ -35,16 +21,15 @@ class Home extends PureComponent {
 
   handleItemPress = item => {
     const { navigation } = this.props;
-    navigation.navigate('Details', item);
+    navigation.navigate(routes.details, item);
   };
 
-  keyExtractor = item => 'li-' + item.id;
+  keyExtractor = item => `li-${item.id}`;
 
-  render() {
-    const { products, loading } = this.props;
-    let content = null;
+  buildContent = () => {
+    const { products } = this.props;
     if (products && products.length) {
-      content = (
+      return (
         <FlatList
           style={styles.listContainer}
           data={products}
@@ -55,10 +40,17 @@ class Home extends PureComponent {
         />
       );
     } else {
-      <Text style={styles.emptyMessage}>Empty list!</Text>;
+      return <Text style={styles.emptyMessage}>Empty list!</Text>;
     }
+  };
+
+  render() {
+    const { loading } = this.props;
+
     return (
-      <View style={styles.container}>{!loading ? content : <Loader />}</View>
+      <View style={styles.container}>
+        {!loading ? this.buildContent() : <Loader />}
+      </View>
     );
   }
 }
