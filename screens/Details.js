@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Button, View, Text, Image, ScrollView } from 'react-native';
-import CartButton from '../components/utils/CartButton';
+import NavigationIcon from '../components/utils/NavigationIcon';
 import styles from '../styles/styles';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { addProduct } from '../redux/actions/CartActions';
@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 class Details extends PureComponent {
   static navigationOptions = {
     title: 'Details',
-    headerRight: <CartButton />
+    headerRight: <NavigationIcon type="cart" />
   };
 
   state = { fallbackImg: null };

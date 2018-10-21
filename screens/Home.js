@@ -12,7 +12,8 @@ import api from '../api/api';
 import routes from '../config/routes';
 import styles from '../styles/styles';
 import { Loader } from '../components/utils/Loader';
-import CartButton from '../components/utils/CartButton';
+import NavigationIcon from '../components/utils/NavigationIcon';
+
 import { fetchProducts } from '../redux/actions/HomeActions';
 import { connect } from 'react-redux';
 const mock = {
@@ -24,7 +25,7 @@ const mock = {
 class Home extends PureComponent {
   static navigationOptions = {
     title: 'Home',
-    headerRight: <CartButton />
+    headerRight: <NavigationIcon type="cart" />
   };
 
   componentDidMount() {
@@ -57,7 +58,7 @@ class Home extends PureComponent {
       <Text>Empty list ...</Text>;
     }
     return (
-      <View style={styles.container}>{loading ? content : <Loader />}</View>
+      <View style={styles.container}>{!loading ? content : <Loader />}</View>
     );
   }
 }

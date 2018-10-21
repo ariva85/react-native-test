@@ -1,22 +1,20 @@
 import React, { PureComponent } from 'react';
 import { View, Text, Button } from 'react-native';
 import styles from '../styles/styles';
-import CartButton from '../components/utils/CartButton';
+import NavigationIcon from '../components/utils/NavigationIcon';
 
-class Modal extends React.Component {
+class Modal extends React.PureComponent {
   render() {
-    const { params } = this.props.navigation.state;
+    const { navigation } = this.props;
+    const { params } = navigation.state;
 
     return (
       <View style={styles.modalContainer}>
         <View style={styles.modalTextWrapper}>
           <Text style={styles.modalText}>{params.name} added to your</Text>
-          <CartButton size={50} />
+          <NavigationIcon type="cart" size={50} />
         </View>
-        <Button
-          onPress={() => this.props.navigation.goBack()}
-          title="Dismiss"
-        />
+        <Button onPress={() => navigation.goBack()} title="Dismiss" />
       </View>
     );
   }

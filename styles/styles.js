@@ -33,17 +33,17 @@ const styles = EStyleSheet.create({
   listItemText: {
     color: '$textColor',
     fontSize: 24,
-    flex: 0.4,
+    flex: 0.6,
     paddingLeft: 20
   },
   listItemPrice: {
     color: '$textColor',
     fontSize: 24,
-    flex: 0.3,
+    flex: 0.2,
     textAlign: 'right'
   },
   listIcon: {
-    flex: 0.3,
+    flex: 0.2,
     textAlign: 'right',
     paddingRight: 10
   },
