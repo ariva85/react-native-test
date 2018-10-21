@@ -24,6 +24,9 @@ export function fetchProducts() {
         response => response.json(),
         error => dispatch(fetchProductFailure(error))
       )
-      .then(json => dispatch(fetchProductSuccess(json.list)));
+      .then(
+        json =>
+          json && json.list ? dispatch(fetchProductSuccess(json.list)) : null
+      );
   };
 }

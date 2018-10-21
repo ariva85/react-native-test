@@ -5,7 +5,6 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import { withNavigation } from 'react-navigation';
 import routes from '../../config/routes';
 import styles from '../../styles/styles';
-import { removeItem } from '../../redux/actions/CartActions';
 
 class CartItem extends PureComponent {
   handleDetailsPress = () => {
@@ -13,11 +12,7 @@ class CartItem extends PureComponent {
     navigation.navigate(routes.details, item);
   };
 
-  handleRemovePress = () => {
-    /* const { dispatch, index } = this.props;
-    dispatch(removeItem(index)); */
-    this.props.onDelete();
-  };
+  handleRemovePress = () => this.props.onDelete();
 
   render() {
     const { item } = this.props;

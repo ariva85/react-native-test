@@ -3,6 +3,7 @@ import {
   FETCH_PRODUCTS_FAILURE,
   FETCH_PRODUCTS_SUCCESS
 } from '../actions/HomeActions';
+import mock from '../../mock.json';
 
 const initialState = {
   products: [],
@@ -22,7 +23,7 @@ export default function homeReducer(state = initialState, action) {
     case FETCH_PRODUCTS_FAILURE:
       return {
         ...state,
-        products: [],
+        products: mock.list, //just in case
         error: action.payload.error,
         loading: false
       };

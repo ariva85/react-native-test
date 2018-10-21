@@ -1,4 +1,4 @@
-import { ADD_PRODUCT } from '../actions/CartActions';
+import { ADD_PRODUCT, REMOVE_PRODUCT } from '../actions/CartActions';
 
 const initialState = {
   list: []
@@ -6,9 +6,10 @@ const initialState = {
 
 export default function homeReducer(state = initialState, action) {
   const newState = { ...state };
+  newState.list = newState.list.slice();
   switch (action.type) {
-    case ADD_PRODUCT:
-      const { list } = state;
+    case ADD_PRODUCT: {
+      const { list } = newState;
       const { item } = action.payload;
       if (list.length) {
         const index = list.findIndex(cartItem => cartItem.id === item.id);
@@ -21,10 +22,11 @@ export default function homeReducer(state = initialState, action) {
       }
       newState.list.push({ ...item, quantity: 1 });
       return newState;
-    case REMOVE_PRODUCT:
+    }
+    case REMOVE_PRODUCT: {
       const { list } = newState;
       const { index } = action.payload;
-      if (list[index].quantity > 2) {
+      if (list[index].quantity > 1) {
         const newItem = { ...list[index] };
         newItem.quantity = --newItem.quantity;
         newState.list[index] = newItem;
@@ -33,7 +35,7 @@ export default function homeReducer(state = initialState, action) {
         newState.list.splice(index, 1);
         return newState;
       }
-
+    }
     default:
       return state;
   }

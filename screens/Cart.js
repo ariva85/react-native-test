@@ -4,6 +4,7 @@ import styles from '../styles/styles';
 import mock from '../mock.json';
 import CartItem from '../components/utils/CartItem';
 import { connect } from 'react-redux';
+import { removeProduct } from '../redux/actions/CartActions';
 
 class Cart extends PureComponent {
   static navigationOptions = {
@@ -13,7 +14,10 @@ class Cart extends PureComponent {
 
   keyExtractor = item => 'ci-' + item.id;
 
-  handleDelete = index => console.log('delete item', index);
+  handleDelete = index => {
+    debugger;
+    this.props.dispatch(removeProduct(index));
+  };
 
   buildCart = () => {
     const { list } = this.props;
@@ -35,9 +39,10 @@ class Cart extends PureComponent {
 
   render() {
     const { list } = this.props;
+    debugger;
     return (
       <View style={styles.container}>
-        {list ? this.buildCart() : <Text>Empty cart!</Text>}
+        {list.length ? this.buildCart() : <Text>Empty cart!</Text>}
       </View>
     );
   }
