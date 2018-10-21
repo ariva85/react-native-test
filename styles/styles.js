@@ -69,7 +69,8 @@ const styles = EStyleSheet.create({
     textAlign: 'left',
     marginBottom: 10,
     borderBottomWidth: 1,
-    borderColor: '$lightGrey'
+    borderColor: '$lightGrey',
+    paddingLeft: 10
   },
   detailsDescription: {
     color: '$textColor',
@@ -79,33 +80,28 @@ const styles = EStyleSheet.create({
     paddingLeft: 20
   },
   detailsPrice: {
-    color: '$textColor',
+    color: '$primaryColor',
     fontSize: 30,
     textAlign: 'right',
     borderWidth: 2,
-    borderColor: '$lightGrey',
+    borderColor: '#fff',
     paddingRight: 5,
-    backgroundColor: '#fff'
+    backgroundColor: '$lightGrey'
   },
   addBtn: {
-    width: '100%',
-    color: '$primaryColor',
-    backgroundColor: '$secondaryColor',
-    fontSize: 30
+    width: '100%'
   },
   modalContainer: {
     width: '100%',
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
-    backgroundColor: '$secondaryColor',
-    padding: 20,
-    borderWidth: 1,
-    borderColor: '#000'
+    justifyContent: 'space-between',
+    backgroundColor: '$secondaryColor'
   },
   modalTextWrapper: {
     alignItems: 'center',
-    marginBottom: 30
+    marginBottom: 30,
+    marginTop: 150
   },
   modalText: {
     color: '$textColor',
@@ -114,8 +110,9 @@ const styles = EStyleSheet.create({
     marginBottom: 10
   },
   cartListIconContainer: {
-    flex: 0.4,
-    flexDirection: 'row'
+    flex: 0.2,
+    flexDirection: 'row',
+    paddingRight: 20
   },
   cartListItem: {
     flex: 1,
@@ -138,14 +135,20 @@ const styles = EStyleSheet.create({
     alignContent: 'center'
   },
   cartListItemText: {
-    flex: 0.6,
-    fontSize: 20
+    flex: 0.4,
+    fontSize: 20,
+    color: '$textColor'
   },
-
   cartListIcon: {
     flex: 1,
     alignSelf: 'center',
     paddingTop: 10
+  },
+  emptyMessage: {
+    fontSize: 30,
+    textAlign: 'center',
+    marginTop: 20,
+    color: '$textColor'
   }
 });
 

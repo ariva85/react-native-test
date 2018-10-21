@@ -6,9 +6,9 @@ import { store } from './redux/store';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 EStyleSheet.build({
-  $textColor: '#123c69',
-  $primaryColor: '#ac3861',
-  $secondaryColor: '#edc7b7',
+  $textColor: '#d1e8e2',
+  $primaryColor: '#2c3531',
+  $secondaryColor: '#4d8889', //'#116466',
   $lightGrey: '#bab2b5'
 });
 

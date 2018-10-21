@@ -45,7 +45,7 @@ class Details extends PureComponent {
           {/* TODO create custom button */}
           <Button
             onPress={this.handleAddBtnPress}
-            title="add"
+            title="Add to cart"
             color={EStyleSheet.value('$primaryColor')}
             style={styles.addBtn}
           />

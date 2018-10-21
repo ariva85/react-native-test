@@ -18,9 +18,12 @@ class CartItem extends PureComponent {
     const { item } = this.props;
     return (
       <View style={styles.cartListItem}>
+        <Text style={styles.cartListItemText}>{item.name}</Text>
         <Text style={styles.cartListItemText}>
-          {item.name} - quantity : {item.quantity}
+          Quantity:
+          {item.quantity}
         </Text>
+
         <View style={styles.cartListIconContainer}>
           <TouchableOpacity
             onPress={this.handleDetailsPress}

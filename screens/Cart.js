@@ -44,7 +44,11 @@ class Cart extends PureComponent {
     debugger;
     return (
       <View style={styles.container}>
-        {list.length ? this.buildCart() : <Text>Empty cart!</Text>}
+        {list.length ? (
+          this.buildCart()
+        ) : (
+          <Text style={styles.emptyMessage}>Empty cart!</Text>
+        )}
       </View>
     );
   }
