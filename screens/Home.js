@@ -57,7 +57,7 @@ class Home extends PureComponent {
       <Text>Empty list ...</Text>;
     }
     return (
-      <View style={styles.container}>{!loading ? content : <Loader />}</View>
+      <View style={styles.container}>{loading ? content : <Loader />}</View>
     );
   }
 }

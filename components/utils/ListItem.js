@@ -11,9 +11,8 @@ class ListItem extends PureComponent {
     return (
       <TouchableHighlight onPress={() => onItemPress(item)}>
         <View style={styles.listItem}>
-          <Text style={styles.listItemText}>
-            {item.name} - {item.price} €
-          </Text>
+          <Text style={styles.listItemText}>{item.name}</Text>
+          <Text style={styles.listItemPrice}>{item.price} €</Text>
           <FontAwesome
             name="caret-right"
             size={24}

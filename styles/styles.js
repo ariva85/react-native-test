@@ -33,17 +33,25 @@ const styles = EStyleSheet.create({
   listItemText: {
     color: '$textColor',
     fontSize: 24,
-    flex: 0.9
+    flex: 0.4,
+    paddingLeft: 20
+  },
+  listItemPrice: {
+    color: '$textColor',
+    fontSize: 24,
+    flex: 0.3,
+    textAlign: 'right'
   },
   listIcon: {
-    flex: 0.1
+    flex: 0.3,
+    textAlign: 'right',
+    paddingRight: 10
   },
   loaderWrapper: {
-    /* height: '100%',
-    width: '100%',
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'center' */
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   cartIconWrapper: {
     padding: 10,
@@ -106,8 +114,6 @@ const styles = EStyleSheet.create({
     marginBottom: 10
   },
   cartListIconContainer: {
-    /* borderWidth: 1,
-    borderColor: '#000', */
     flex: 0.4,
     flexDirection: 'row'
   },
@@ -126,18 +132,13 @@ const styles = EStyleSheet.create({
     margin: 3
   },
   cartListIconWrapper: {
-    /* padding: 5, */
     marginRight: 5,
     height: 40,
-    /*  borderWidth: 1,
-    borderColor: '#000', */
     width: '50%',
     alignContent: 'center'
   },
   cartListItemText: {
     flex: 0.6,
-    /* borderWidth: 1,
-    borderColor: '#000', */
     fontSize: 20
   },
 

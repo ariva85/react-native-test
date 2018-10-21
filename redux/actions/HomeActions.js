@@ -16,8 +16,8 @@ export const fetchProductFailure = error => ({
   payload: { error }
 });
 
-export function fetchProducts() {
-  return function(dispatch) {
+export const fetchProducts = () => {
+  return dispatch => {
     dispatch(fetchProductsRequest());
     return fetch(`http://www.mocky.io/v2/5bcb2e832f0000610075be9b`)
       .then(
@@ -29,4 +29,4 @@ export function fetchProducts() {
           json && json.list ? dispatch(fetchProductSuccess(json.list)) : null
       );
   };
-}
+};
