@@ -1,14 +1,6 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-// define extended styles
 const styles = EStyleSheet.create({
-  column: {
-    width: '80%'
-  },
-  text: {
-    color: '$textColor',
-    fontSize: 20
-  },
   container: {
     width: '100%',
     flex: 1,

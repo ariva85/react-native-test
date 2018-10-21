@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+//not working
+
+/* import React, { Component } from 'react';
 import { Animated } from 'react-native';
 
-//not working
 export function withFade(WrappedComponent) {
   return class extends React.Component {
     state = { fadeAnim: new Animated.Value(0) };
 
     constructor(props) {
       super(props);
-      console.log('am i really fading===?');
     }
 
     componentDidMount() {
@@ -34,7 +34,6 @@ export function withFade(WrappedComponent) {
     }
 
     render() {
-      console.log('and am i rendering?');
       return (
         <Animated.View>
           <WrappedComponent {...this.props} />;
@@ -42,4 +41,4 @@ export function withFade(WrappedComponent) {
       );
     }
   };
-}
+} */

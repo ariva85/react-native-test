@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "barebone",
-    "description": "This project is really great.",
-    "slug": "barebone",
+    "name": "react-native-test",
+    "description": "Simple react native app with redux",
+    "slug": "react-native-test",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "platforms": ["ios", "android"],
@@ -17,9 +17,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     }
