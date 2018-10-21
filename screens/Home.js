@@ -7,14 +7,14 @@ import {
   ActivityIndicator,
   Animated
 } from 'react-native';
-import { Title } from '../components/utils/Title';
 import ListItem from '../components/utils/ListItem';
 import api from '../api/api';
 import routes from '../config/routes';
 import styles from '../styles/styles';
 import { Loader } from '../components/utils/Loader';
-import { withFade } from '../hoc/withFade';
 import CartButton from '../components/utils/CartButton';
+import { fetchProducts } from '../redux/actions/HomeActions';
+import { connect } from 'react-redux';
 const mock = {
   name: 'adsas dads',
   details: ' qweq weqw eqw ewqe wqe wqe ',
@@ -27,23 +27,9 @@ class Home extends PureComponent {
     headerRight: <CartButton />
   };
 
-  state = { products: null, isLoading: true };
-
-  async componentDidMount() {
-    /*  Animated.timing(
-      // Animate over time
-      this.state.fadeAnim, // The animated value to drive
-      {
-        toValue: 1, // Animate to opacity: 1 (opaque)
-        duration: 10000 // Make it take a while
-      }
-    ).start(); */
-    //this.props.navigation.setParams({ goToCart: this.goToCart });
-
-    const apiResult = await api.getList();
-    //setTimeout(() => {
-    this.setState({ products: apiResult.list, isLoading: true });
-    //}, 2000);
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(fetchProducts());
   }
 
   handleItemPress = item => {
@@ -54,8 +40,7 @@ class Home extends PureComponent {
   keyExtractor = item => 'li-' + item.id;
 
   render() {
-    const { navigation } = this.props;
-    const { products, isLoading } = this.state;
+    const { products, loading } = this.props;
     let content = null;
     if (products && products.length) {
       content = (
@@ -69,13 +54,17 @@ class Home extends PureComponent {
         />
       );
     } else {
-      //basic error handling
-      content = <Text>Error loading data...</Text>;
+      <Text>Empty list ...</Text>;
     }
     return (
-      <View style={styles.container}>{isLoading ? content : <Loader />}</View>
+      <View style={styles.container}>{!loading ? content : <Loader />}</View>
     );
   }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  products: state.HomeReducer.products,
+  loading: state.HomeReducer.loading
+});
+
+export default connect(mapStateToProps)(Home);

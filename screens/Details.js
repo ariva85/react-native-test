@@ -3,20 +3,36 @@ import { Button, View, Text, Image, ScrollView } from 'react-native';
 import CartButton from '../components/utils/CartButton';
 import styles from '../styles/styles';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { addProduct } from '../redux/actions/CartActions';
+import { connect } from 'react-redux';
 
 class Details extends PureComponent {
   static navigationOptions = {
     title: 'Details',
     headerRight: <CartButton />
   };
+
+  state = { fallbackImg: null };
+
+  handleAddBtnPress = () => {
+    const { navigation, dispatch } = this.props;
+    const { params } = navigation.state;
+    dispatch(addProduct(params));
+    navigation.navigate('Modal', params);
+  };
+
   render() {
     const { navigation } = this.props;
+    const { fallbackImg } = this.state;
     const { params } = navigation.state;
     return (
       <View style={styles.container}>
         <Image
           style={{ width: '100%', height: 200 }}
-          source={{ uri: 'https://placeimg.com/640/480/tech' }}
+          source={fallbackImg || { uri: params.uri }}
+          onError={() =>
+            this.setState({ fallbackImg: require('../assets/splash.png') })
+          }
         />
         <Text style={styles.detailsTitle}>
           {('' + params.name).toUpperCase()}
@@ -28,7 +44,7 @@ class Details extends PureComponent {
           <Text style={styles.detailsPrice}>{`Price : ${params.price} €`}</Text>
           {/* TODO create custom button */}
           <Button
-            onPress={() => navigation.navigate('Modal', params)}
+            onPress={this.handleAddBtnPress}
             title="add"
             color={EStyleSheet.value('$primaryColor')}
             style={styles.addBtn}
@@ -39,4 +55,8 @@ class Details extends PureComponent {
   }
 }
 
-export default Details;
+const mapStateToProps = state => {
+  return {};
+};
+
+export default connect(mapStateToProps)(Details);

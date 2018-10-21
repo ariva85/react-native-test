@@ -5,6 +5,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import { withNavigation } from 'react-navigation';
 import routes from '../../config/routes';
 import styles from '../../styles/styles';
+import { removeItem } from '../../redux/actions/CartActions';
 
 class CartItem extends PureComponent {
   handleDetailsPress = () => {
@@ -13,14 +14,18 @@ class CartItem extends PureComponent {
   };
 
   handleRemovePress = () => {
-    console.log('remove', this.props.item);
+    /* const { dispatch, index } = this.props;
+    dispatch(removeItem(index)); */
+    this.props.onDelete();
   };
 
   render() {
     const { item } = this.props;
     return (
       <View style={styles.cartListItem}>
-        <Text style={styles.cartListItemText}>{item.name} - quantity : 2</Text>
+        <Text style={styles.cartListItemText}>
+          {item.name} - quantity : {item.quantity}
+        </Text>
         <View style={styles.cartListIconContainer}>
           <TouchableOpacity
             onPress={this.handleDetailsPress}
