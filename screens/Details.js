@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import { Button, View, Text, Image, ScrollView } from 'react-native';
-import NavigationIcon from '../components/utils/NavigationIcon';
-import styles from '../styles/styles';
-import EStyleSheet from 'react-native-extended-stylesheet';
-import { addProduct } from '../redux/actions/CartActions';
 import { connect } from 'react-redux';
+import { addProduct } from '../redux/actions/CartActions';
+import NavigationIcon from '../components/utils/NavigationIcon';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import styles from '../styles/styles';
 import routes from '../config/routes';
 
 class Details extends PureComponent {

@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
-import { Button, View, Text, FlatList } from 'react-native';
-import styles from '../styles/styles';
+import { View, Text, FlatList } from 'react-native';
+import { connect } from 'react-redux';
 import CartItem from '../components/utils/CartItem';
 import NavigationIcon from '../components/utils/NavigationIcon';
-
-import { connect } from 'react-redux';
 import { removeProduct } from '../redux/actions/CartActions';
+import styles from '../styles/styles';
 
 class Cart extends PureComponent {
   static navigationOptions = {

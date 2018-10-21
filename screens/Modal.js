@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import styles from '../styles/styles';
 import NavigationIcon from '../components/utils/NavigationIcon';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import styles from '../styles/styles';
 
 class Modal extends React.PureComponent {
   render() {

@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { View, Text, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import EStyleSheet from 'react-native-extended-stylesheet';
 import { withNavigation } from 'react-navigation';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import routes from '../../config/routes';
 import styles from '../../styles/styles';
 
